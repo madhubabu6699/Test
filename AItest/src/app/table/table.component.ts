@@ -3,7 +3,6 @@ import {switchMap} from 'rxjs/operators';
 import {timer} from 'rxjs';
 import { AIService } from '../ai.service';
 
-
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -26,7 +25,7 @@ export class TableComponent implements OnInit {
     });
   }
 
-  modaldata(id){
+  Modaldata(id){
     this.rawdata=id;
   }
 

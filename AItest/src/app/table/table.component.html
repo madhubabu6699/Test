@@ -1,8 +1,12 @@
 
 
+
+
+
+
 <div class="pt-5">
 
-<div>
+<div >
 <input class="form-control" placeholder="search" [(ngModel)]="searchfilter">
 </div>
 
@@ -21,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let items of details | search: searchfilter" (click)="modeldata(items)" data-toggle="modal" data-target="#myModel" >
+            <tr *ngFor="let items of details | search: searchfilter" (click)="Modaldata(items)" data-toggle="modal" data-target="#myModel" >
 
                 <td>{{items.title}}</td>
                 <td> {{items.url}}</td>
@@ -50,12 +54,11 @@
             <div class="modal-body pl-5 pr-5 pt-0">
                 <h3 class="heading_model">Table Raw Data
                 </h3>
-            </div>
-            <div>
                 <pre>
-                    {{rawdata|json}}
+                        {{rawdata |json}}
                 </pre>
             </div>
+            
         </div>
         <div class="modal-footer modal_borders pt-0">
             <button type="button" class="btn submit_button" data-dismiss="modal">close</button>
