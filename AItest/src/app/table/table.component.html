@@ -1,0 +1,67 @@
+
+<div>
+<input class="form-control" placeholder="search" [(ngModel)]="searchfilter">
+
+
+</div>
+
+<div class="table-responsive">
+
+
+    <table class="table">
+        <thead >
+            <tr >
+
+                <th scope="col">Title</th>
+                <th scope="col">url</th>
+                <th scope="col">created_at</th>
+                <th scope="col">author</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let items of details | search: searchfilter" (click)="modeldata(items)" data-toggle="modal" data-target="#myModel" >
+
+                <td>{{items.title}}</td>
+                <td> {{items.url}}</td>
+                <td>{{items.created_at}}</td>
+                <td>{{items.author}}</td>
+            </tr>
+            <tr>
+
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+    <!--Model-->
+    <div class="modal" id="myModel">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal_borders">
+                <button type="button" class="close close_button" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body pl-5 pr-5 pt-0">
+                <h3 class="heading_model"> Table Raw Data
+                </h3>
+            </div>
+            <div>
+                <pre>
+                    {{rawdata|json}}
+                </pre>
+            </div>
+        </div>
+        <div class="modal-footer modal_borders pt-0">
+            <button type="button" class="btn submit_button" data-dismiss="modal">close</button>
+        </div>
+        </div>
+    </div>
+
+
+    
+</div>
